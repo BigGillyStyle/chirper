@@ -1,6 +1,6 @@
 /* jshint node: true */
 
-module.exports = function(environment) {
+module.exports = function (environment) {
   var ENV = {
     modulePrefix: 'chirper',
     environment: environment,
@@ -16,6 +16,15 @@ module.exports = function(environment) {
 
     contentSecurityPolicy: {
       'connect-src': 'http://localhost:9000'
+    },
+
+    'simple-auth': {
+      authorizer: 'simple-auth-authorizer:oauth2-bearer',
+      crossOriginWhitelist: ['http://localhost:9000']
+    },
+
+    'simple-auth-oauth2': {
+      serverTokenEndpoint: 'http://localhost:9000/token'
     },
 
     APP: {

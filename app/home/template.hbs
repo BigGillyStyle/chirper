@@ -1,6 +1,7 @@
 <div class="page-container home-page">
   <aside class="left">
-    {{profile-glance user=model.user}}
+    {{profile-glance user=session.currentUser}}
+    <button class="logout" {{action 'logout'}}>Log out</button>
   </aside>
 
   <main>

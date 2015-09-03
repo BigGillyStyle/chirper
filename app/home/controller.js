@@ -6,6 +6,10 @@ export default Ember.Controller.extend({
   actions: {
     openComposeModal: function() {
       this.get('application').send('toggleComposeModal');
+    },
+    logout: function() {
+      this.get('session').invalidate();
+      this.transitionToRoute('index');
     }
   }
 });
