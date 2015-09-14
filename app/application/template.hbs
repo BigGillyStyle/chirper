@@ -6,9 +6,8 @@
       <nav>
         {{#link-to "home"}}Home{{/link-to}}
 
-        {{#link-to "user"}}
-          <img class="avatar" src="/images/avatar.jpg" />
-          {{session.currentUser.username}}
+        {{#link-to "user" session.currentUser.username}}
+          <img class="avatar" src="/images/avatar.jpg" /> {{session.currentUser.username}}
         {{/link-to}}
 
         <button class="chirp" {{action 'toggleComposeModal'}}>Chirp</button>
